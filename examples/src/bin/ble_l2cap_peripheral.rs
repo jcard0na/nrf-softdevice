@@ -77,7 +77,7 @@ async fn main(spawner: Spawner) {
             accuracy: raw::NRF_CLOCK_LF_ACCURACY_500_PPM as u8,
         }),
         conn_gap: Some(raw::ble_gap_conn_cfg_t {
-            conn_count: 20,
+            conn_count: 1,
             event_length: 180,
         }),
         conn_gatt: Some(raw::ble_gatt_conn_cfg_t { att_mtu: 114 }),
@@ -90,10 +90,7 @@ async fn main(spawner: Spawner) {
         }),
         gap_role_count: Some(raw::ble_gap_cfg_role_count_t {
             adv_set_count: 1,
-            periph_role_count: 5,
-            central_role_count: 15,
-            central_sec_count: 0,
-            _bitfield_1: raw::ble_gap_cfg_role_count_t::new_bitfield_1(0),
+            periph_role_count: 1,
         }),
         gap_device_name: Some(raw::ble_gap_cfg_device_name_t {
             p_value: b"HelloRust" as *const u8 as _,
